@@ -44,7 +44,7 @@ submitButton.onclick= function emitMessage() {
     
 }
 
-function appendStudentAnswer(message){
+function appendAnswer(message){
     const answerElement = document.createElement('div')
     answerElement.innerText = message
     whoBox.append(answerElement)
