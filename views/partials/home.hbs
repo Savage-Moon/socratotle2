@@ -1,0 +1,50 @@
+<div class="soc-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto ">
+            <div class="inner ">
+                <img src="../../images/TextLogo.png" alt="">
+                <Nav class="nav nav-masthead justify-content-center">
+                    <a href="/user" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Features</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </Nav>
+                
+            </div>
+        </header>
+        <main role="main" class="inner cover d-flex justify-content-center">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                <div class="justify-content-center">
+                    <div class="col-lg-6 justify-content-center">
+                       <img src="images/wink.gif" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="card">
+					<div class="card-header">
+                        Do you want to create or join a session
+					</div>
+                    <div class="card-body">
+                        <div class="btn-group-lg">
+                            <a href="#" id ="createSession"class="btn btn-lg btn-secondary" onClick="createSession();">Create</a>
+                            <a href="#" class="btn btn-lg btn-secondary" onClick="TeacherFunc();">Join</a>                       
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>
+                    Socratotle beta version 2
+                </p>
+            </div>
+        </footer>
+    
+</div>
+
+<script>
+
+    document.getElementById("createSession").onclick = function () {
+        location.href = "/createSession";
+    };
+       
+
+</script>

@@ -1,0 +1,64 @@
+<div id="Student">
+  <div class="container rounded text-center nib">
+    <div class="card">
+      <div class="card-header">
+        <h3>Join session</h3><br>
+        Enter the session code.
+      </div>
+      <div class="card-body">
+        <div style="all: initial;">
+          <forum class="pure-form">
+            <input id="sessionPin" type="text" class="pure-input-rounded" placeholder="Game pin"><br><br>
+            <button type="button"  class="btn btn-success btn-lg disabled" onClick="joinSession();" id="joinSession">Join</button>
+          </forum>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var roomID
+
+    var socket = io.connect('http://localhost:3008');
+
+
+    var input = document.getElementById("sessionPin");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("joinSession").click();
+        }
+    });
+    function joinSession(){
+        roomID = input.value
+        console.log('TESTING join Session')
+        if(input.value == ""){
+            alert("Please enter a session code.");
+            return;
+        }
+        var dataForServer ={}
+        dataForServer.user      = 'student'
+        dataForServer.msg       = 'I want to make a join session here'
+        dataForServer.roomID    = roomID
+        
+        socket.emit('joinRoom', dataForServer) 
+
+        setTimeout(
+            function(){
+                socket.emit('getRooms', 'testing')
+                console.log(socket.id)
+        },4000)
+    }
+
+    
+</script>
+
+
+
+
+
