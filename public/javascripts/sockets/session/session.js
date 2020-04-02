@@ -1,4 +1,4 @@
-const socket = io('http://100.24.65.92/')
+const socket = io('http://100.24.65.92:3008/')
 //var socket = io.connect('http://localhost:3008');
 
 const messageBox = document.getElementById('textbox')
