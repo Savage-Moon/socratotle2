@@ -23,7 +23,8 @@ body{
   text-align: center;
 }
 #maincontent{
-  background-color: silver;
+  /* 
+  background-color: blue; */
   border: 2px solid white;
   text-align: center;
 }
@@ -39,3 +40,12 @@ img {
   border: 1px solid black;
   margin: 5px;
 }
+/* 
+#subjects {
+  background-color: brown;
+} */
+/* div{
+  background-color: silver;
+  border: 2px solid white;
+  text-align: center;
+} */

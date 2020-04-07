@@ -28,8 +28,10 @@ async function socketSetup(server) {
                 if(joinSession.checkIfRoomExists(rooms,data.roomID)){
                     joinSession.joinRoom(io,socket,data)
                     console.log(util.inspect(io.sockets.adapter.rooms,{depth:null}))
+                    socket.emit('ServerResponse','Success')
                 }
                 else{
+                    socket.emit('ServerResponse','Failed')
                     return `Room ${data.roomID} doesnt exist.`
                 }
             })
@@ -40,13 +42,22 @@ async function socketSetup(server) {
                 //console.log('createSession socket emit:\r\n'+ util.inspect(data,{depth:null}));
             })
             socket.on('getRooms',function (data) {
+                console.log('GetRooms in socket directory called');
                 console.log(socket.rooms)
 
                 //console.log('createSession socket emit:\r\n'+ util.inspect(data,{depth:null}));
             })
             socket.on('answer',function (data) {
                 session.getRooms(io,socket,data)
-                socket.emit('message',data.message)
+                console.log(data);
+                
+                io.in(data.roomID).emit('message',data)
+                //console.log('createSession socket emit:\r\n'+ util.inspect(data,{depth:null}));
+            })
+            socket.on('boxChange',function (data) {
+                console.log(data);
+                
+                io.in(data.roomID).emit('changeBox',data)
                 //console.log('createSession socket emit:\r\n'+ util.inspect(data,{depth:null}));
             })
             

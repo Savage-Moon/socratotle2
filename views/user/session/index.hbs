@@ -1,5 +1,6 @@
 <script defer src="/socket.io/socket.io.js"></script>
 <script defer src="/javascripts/sockets/session/session.js"></script>
+<script defer src="/javascripts/sockets/session/otherPageFunctions.js"></script>
 <form action="session" id="maincontainer" style="height: 100vh">
         <div id='Header' class="row ">
             <div class="col-md-3 col-lg-3">
@@ -11,45 +12,48 @@
                 sidebar
             </div>
             
-            <div id="maincontent" class=" col-md-9 col-lg-9">
-                <div class="container">
-                    <div class="row">
+            <div id="maincontent" class="text-center col-md-9 col-lg-9">
+                    <div id="subjects" class="row">
                         <div class="col-lg-3 subjectbox" id="whosubjectbox" style="background-color: #eee;">
-                            Hello
+                            WHO
                         </div>
                         <div class="col-lg-3 subjectbox" id="whatsubjectbox" style="background-color: #eee;">
-                            hello
+                            WHAT
                         </div>
                         <div class="col-lg-3 subjectbox" id="whysubjectbox" style="background-color: #eee;">
-                            hello
+                            WHY
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 subjectbox" id="wheresubjectbox" style="background-color: #eee;">
-                            Hello
+                            WHERE
                         </div>
                         <div class="col-lg-3 subjectbox" id="whensubjectbox" style="background-color: #eee;">
-                            hello
+                            WHEN
                         </div>
                         <div class="col-lg-3 subjectbox" id="howsubjectbox" style="background-color: #eee;">
-                            hello
+                            HOW
                         </div>
                     </div>
-                </div>
+                
+                    <div class="row">
+                        <div class="col-lg-9">
+                            Questions:
+                            <input type="text"  name="" id="textbox" onkeydown="if(event.keyCode===13){event.preventDefault();}">
+                            <button type="button" id='submitbutton' onclick=""> Submit</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <button type="button" id='Prevbutton' onclick=""> Prev</button>
+                            <button type="button" id='Nextbutton' onclick=""> Next</button>
+                        </div>
+                    </div>
+            
             </div>
         </div>
         {{!-- end of sidebar and main content --}}
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10">
-
-                        <input type="text" width="50%" name="" id="textbox">
-                        <button type="button" id='submitbutton'> Submit</button>
-                    </div>
-                    
-
-                </div>
-            </div>
+            
         
 
 </form>
