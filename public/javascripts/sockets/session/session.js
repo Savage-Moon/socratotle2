@@ -24,6 +24,9 @@ const sessionTopic  = localStorage.getItem('sessionTopic');
 const sessionID     = localStorage.getItem('sessionID');
 const userID        = localStorage.getItem('userID')
 
+
+
+
 messageBox.value    = 'testing'
 
 var dataForServer ={}
