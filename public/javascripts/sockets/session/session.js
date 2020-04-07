@@ -20,9 +20,9 @@ var next = document.getElementById("Nextbutton");
 
 
 
-const sessionTopic  = localStorage.getItem('sessionTopic');
-const sessionID     = localStorage.getItem('sessionID');
-const userID        = localStorage.getItem('userID')
+var sessionTopic  = localStorage.getItem('sessionTopic');
+var sessionID     = localStorage.getItem('sessionID');
+var userID        = localStorage.getItem('userID')
 
 
 

@@ -62,9 +62,8 @@
 
     const SessionCodeDisplay =  document.getElementById('SessionCode')
 
-    const sessionTopic  = localStorage.getItem('sessionTopic');
-    const sessionID     = localStorage.getItem('sessionID');
-    const userID        = localStorage.getItem('userID')
+    var sessionID     = localStorage.getItem('sessionID');
+    var userID        = localStorage.getItem('userID')
 
     //adds session code to SideBar
     addSessionCode(sessionID)
